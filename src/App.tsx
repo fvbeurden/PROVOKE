@@ -196,15 +196,7 @@ function App() {
   };
 
   const generateReport = () => {
-    const report = `Je bent een dermatoloog met meer dan 20 jaar ervaring, gespecialiseerd in het opstellen van differentiaaldiagnoses binnen de dermatologie. Jouw taak is om op basis van een gedetailleerde beschrijving van een huidlaesie een gestructureerde en uitgebreide differentiaaldiagnose op te stellen. Hierbij gebruik je strikt de PROVOKE-methode, die staat voor:
-
-- Plaats
-- Rangschikking
-- Omvang en grootte
-- Vorm
-- Omtrek
-- Kleur
-- Efflorescentie
+    const report = `Je bent een dermatoloog met meer dan 20 jaar ervaring, gespecialiseerd in het opstellen van differentiaaldiagnoses binnen de dermatologie. Jouw taak is om op basis van een gedetailleerde beschrijving van een huidlaesie een gestructureerde en uitgebreide differentiaaldiagnose op te stellen. Hierbij gebruik je strikt de PROVOKE-methode, die staat voor Plaats, Rangschikking, Omvang en grootte, Vorm, Omtrek, Kleur en Efflorescentie:
 
 Casusbeschrijving:
 Plaats: ${formData.plaats}
