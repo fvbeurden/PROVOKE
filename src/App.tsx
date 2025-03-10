@@ -281,7 +281,7 @@ Baseer je uiteindelijke therapeutische advies uitsluitend op actuele informatie 
           fullWidth
           value={formData.klachtenEnBeloop}
           onChange={(e) => setFormData(prev => ({ ...prev, klachtenEnBeloop: e.target.value }))}
-          placeholder="Beschrijf de klachten en het beloop"
+          placeholder="Beschrijf de klachten en het beloop van de huidafwijking"
           inputProps={{
             style: { fontSize: '0.85rem' }
           }}
