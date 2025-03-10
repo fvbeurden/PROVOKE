@@ -14,6 +14,7 @@ import {
 } from '@mui/material';
 
 interface FormData {
+  klachtenEnBeloop: string;
   plaats: string;
   rangschikking: string[];
   omvang: string;
@@ -25,6 +26,7 @@ interface FormData {
 
 function App() {
   const [formData, setFormData] = useState<FormData>({
+    klachtenEnBeloop: '',
     plaats: '',
     rangschikking: [],
     omvang: '',
@@ -198,7 +200,7 @@ function App() {
   const generateReport = () => {
     const report = `Je bent een dermatoloog met meer dan 20 jaar ervaring, gespecialiseerd in het opstellen van differentiaaldiagnoses binnen de dermatologie. Jouw taak is om op basis van een gedetailleerde beschrijving van een huidlaesie een gestructureerde en uitgebreide differentiaaldiagnose op te stellen. Hierbij gebruik je strikt de PROVOKE-methode, die staat voor Plaats, Rangschikking, Omvang en grootte, Vorm, Omtrek, Kleur en Efflorescentie:
 
-Casusbeschrijving:
+Casusbeschrijving: ${formData.klachtenEnBeloop}
 Plaats: ${formData.plaats}
 Rangschikking: ${formData.rangschikking.join(' of ')}
 Omvang en Grootte: ${formData.omvang}
@@ -272,6 +274,19 @@ Baseer je uiteindelijke therapeutische advies uitsluitend op actuele informatie 
 
         Wij adviseren nadrukkelijk om bij twijfel of vragen altijd contact op te nemen met een gekwalificeerd medisch professional.
       </Typography>
+
+      <Paper elevation={3} sx={{ p: 3, mb: 3 }}>
+        <Typography variant="h6" gutterBottom sx={{ fontWeight: 700 }}>Klachten en beloop</Typography>
+        <TextField
+          fullWidth
+          value={formData.klachtenEnBeloop}
+          onChange={(e) => setFormData(prev => ({ ...prev, klachtenEnBeloop: e.target.value }))}
+          placeholder="Beschrijf de klachten en het beloop"
+          inputProps={{
+            style: { fontSize: '0.85rem' }
+          }}
+        />
+      </Paper>
 
       <Paper elevation={3} sx={{ p: 3, mb: 3 }}>
         <Typography variant="h6" gutterBottom sx={{ fontWeight: 700 }}>Plaats</Typography>
